@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Gurleen Kaur — Technical Program Manager. MS in Project Management (Business Analysis), Northeastern University. TPM experience at Tesla and Navisun." />
+<title>Gurleen Kaur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:      #18160F;
+    --warm:     #F7F3ED;
+    --surface:  #EFEAE2;
+    --mid:      #7A7264;
+    --border:   #D6CEBF;
+    --tesla:    #C4622D;
+    --tesla-bg: #FDF0E8;
+    --navisun:  #2D5A3D;
+    --navisun-bg: #EAF2EC;
+    --nucleus:  #3D3580;
+    --nucleus-bg: #EEEDFE;
+    --badhwar:  #704214;
+    --badhwar-bg: #F9F0E6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5vw;
+    background: rgba(247,243,237,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
+  section { padding: 7rem 0; }
+  section:first-of-type { padding-top: 0; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner { max-width: 860px; }
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1.4rem;
+  }
+  .hero-name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.4rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.6rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--tesla);
+  }
+  .hero-bio {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-bio strong { font-weight: 500; }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 2.5rem;
+    margin-bottom: 2.8rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--mid);
+    display: block;
+    margin-top: 0.3rem;
+    max-width: 130px;
+    line-height: 1.4;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.75rem 1.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-dark {
+    background: var(--ink);
+    color: var(--warm);
+  }
+  .btn-dark:hover { background: #2e2b20; }
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover { background: var(--surface); }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--ink); color: var(--warm); }
+  #about .section-label { color: rgba(247,243,237,0.45); }
+  #about .section-title { color: var(--warm); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(247,243,237,0.85);
+  }
+  .about-text p + p { margin-top: 1.2rem; }
+  .about-text strong { color: var(--warm); font-weight: 500; }
+  .about-right {}
+  .about-highlights { list-style: none; }
+  .about-highlights li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(247,243,237,0.12);
+    font-size: 0.9rem;
+    color: rgba(247,243,237,0.7);
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  .about-highlights li:first-child { border-top: 1px solid rgba(247,243,237,0.12); }
+  .about-highlights .hl-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,243,237,0.35);
+    min-width: 80px;
+    padding-top: 0.15rem;
+  }
+  .about-highlights .hl-val { color: rgba(247,243,237,0.85); }
+
+  /* ── EXPERIENCE ── */
+  #experience { border-bottom: 1px solid var(--border); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-card {
+    padding: 2.8rem 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+  }
+  .exp-card:last-child { border-bottom: 1px solid var(--border); }
+  .exp-meta {}
+  .exp-company-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+  }
+  .badge-tesla { background: var(--tesla-bg); color: var(--tesla); }
+  .badge-navisun { background: var(--navisun-bg); color: var(--navisun); }
+  .badge-nucleus { background: var(--nucleus-bg); color: var(--nucleus); }
+  .badge-badhwar { background: var(--badhwar-bg); color: var(--badhwar); }
+  .badge-pmi { background: #F0F4FF; color: #2A4DB5; }
+  .badge-marquee { background: #FFF5F0; color: #A0390A; }
+
+  .exp-role {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+  .exp-date {
+    font-size: 0.78rem;
+    color: var(--mid);
+    font-weight: 400;
+  }
+  .exp-content {}
+  .exp-headline {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.7rem;
+    line-height: 1.45;
+  }
+  .exp-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #4A4538;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .exp-bullets li {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #4A4538;
+    line-height: 1.65;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--border);
+    font-weight: 300;
+  }
+  .exp-stats {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    margin-top: 1.4rem;
+  }
+  .exp-stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.6rem 1rem;
+    font-size: 0.78rem;
+    color: var(--mid);
+  }
+  .exp-stat strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ── PROJECTS & LEADERSHIP ── */
+  #projects { background: var(--surface); border-bottom: 1px solid var(--border); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .proj-card {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.8rem;
+  }
+  .proj-card-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .proj-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .proj-date {
+    font-size: 0.72rem;
+    color: var(--mid);
+    white-space: nowrap;
+    margin-left: 1rem;
+    padding-top: 0.25rem;
+  }
+  .proj-body {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #4A4538;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .proj-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--mid);
+  }
+
+  /* ── SKILLS ── */
+  #skills { border-bottom: 1px solid var(--border); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+  }
+  .skill-group-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+  .skill-list li {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--surface); border-bottom: 1px solid var(--border); }
+  .edu-grid { display: flex; flex-direction: column; gap: 0; }
+  .edu-card {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .edu-card:last-child { border-bottom: 1px solid var(--border); }
+  .edu-period { font-size: 0.78rem; color: var(--mid); }
+  .edu-degree {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .edu-school { font-size: 0.9rem; color: var(--mid); margin-bottom: 0.5rem; }
+  .edu-detail { font-size: 0.85rem; font-weight: 300; color: #4A4538; line-height: 1.65; }
+  .edu-gpa {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.25rem 0.6rem;
+    color: var(--mid);
+    margin-top: 0.6rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact { text-align: center; }
+  .contact-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .contact-heading em { font-style: italic; color: var(--tesla); }
+  .contact-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--mid);
+    margin-bottom: 2.5rem;
+  }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 5vw;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--mid);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-card { grid-template-columns: 1fr; gap: 1rem; }
+    .edu-card { grid-template-columns: 1fr; gap: 0.5rem; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#hero">Gurleen Kaur</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Technical Program Manager &nbsp;·&nbsp; Available July 2026</p>
+      <h1 class="hero-name">Gurleen<br><em>Kaur</em></h1>
+      <p class="hero-bio">
+        I build the <strong>operational infrastructure</strong> that keeps cross-functional teams aligned, moving, and accountable. At Tesla, I owned analytics and service readiness programs across a 200+ agent organisation. At Navisun, I managed a ~150MW solar portfolio end to end. My work lives at the intersection of <strong>program delivery, business analysis, and customer operations</strong>.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">20%</span>
+          <span class="stat-label">Reduction in agent ramp time, Tesla</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">25%</span>
+          <span class="stat-label">QA variance eliminated across 16 supervisors</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">150MW</span>
+          <span class="stat-label">Solar asset portfolio managed, Navisun</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4.0</span>
+          <span class="stat-label">GPA, MS Project Management, Northeastern</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#experience" class="btn btn-dark">View my work</a>
+        <a href="https://www.linkedin.com/in/gurleenkaur-lead/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+        <a href="mailto:gurleenkaur.f@northeastern.edu" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">The person behind the work</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a Technical Program Manager finishing my MS in Project Management — with a concentration in <strong>Business Analysis</strong> — at Northeastern University, where I'm graduating with a 4.0 GPA in July 2026. My background spans energy operations, customer experience infrastructure, and cross-functional program delivery across both corporate and startup environments.</p>
+        <p>What I bring to every role is the ability to move between two modes: <strong>synthesising complex data into executive decisions</strong> and sitting deep in the weeds with cross-functional stakeholders to remove blockers. I don't wait for clarity — I build it.</p>
+        <p>At Tesla, that meant diagnosing systemic QA inconsistency, redesigning the evaluation framework, and driving adoption across 16 supervisors. At Navisun, it meant building project tracking infrastructure from scratch and owning a repowering feasibility program end-to-end across six departments. I care about the work landing — not just being delivered.</p>
+      </div>
+      <div class="about-right">
+        <ul class="about-highlights">
+          <li>
+            <span class="hl-label">Currently</span>
+            <span class="hl-val">MS Project Management, Business Analysis · Northeastern University</span>
+          </li>
+          <li>
+            <span class="hl-label">Recent</span>
+            <span class="hl-val">TPM Intern · Tesla Residential Energy, Buffalo NY</span>
+          </li>
+          <li>
+            <span class="hl-label">Recent</span>
+            <span class="hl-val">TPM Intern · Navisun LLC, Hingham MA</span>
+          </li>
+          <li>
+            <span class="hl-label">Focus</span>
+            <span class="hl-val">TPM · Program Operations · Business Analysis · Customer Experience</span>
+          </li>
+          <li>
+            <span class="hl-label">Open to</span>
+            <span class="hl-val">Full-time roles starting July 2026</span>
+          </li>
+          <li>
+            <span class="hl-label">Location</span>
+            <span class="hl-val">Boston, MA · Open to relocation</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've done the work</h2>
+    <div class="exp-list">
+
+      <!-- TESLA -->
+      <div class="exp-card">
+        <div class="exp-meta">
+          <span class="exp-company-badge badge-tesla">Tesla</span>
+          <div class="exp-role">Technical Program Manager Intern</div>
+          <div class="exp-date">Sep 2025 – Jan 2026 · Buffalo, NY<br>Residential Energy Customer Support</div>
+        </div>
+        <div class="exp-content">
+          <p class="exp-headline">Owned analytics, service readiness, and QA programs across a 200+ agent organisation supporting Tesla's residential energy products — Powerwall, Solar Roof, and energy storage.</p>
+          <ul class="exp-bullets">
+            <li>Built the Speed to Proficiency program from scratch across 5 product channels — defined KPIs (CSAT 95%, AHT ≤15 min), designed cohort tracking infrastructure, and established progressive proficiency benchmarks that reduced agent ramp time by 20%.</li>
+            <li>Diagnosed QA inconsistency across 16 supervisors as a definitional misalignment problem, not a performance one — rebuilt the audit framework, facilitated calibration sessions to align supervisors on new standards, and reduced rating variance by 25%.</li>
+            <li>Analysed Tesla Assist (AI bot) performance data in Tableau — identified high-failure customer deflection categories, coordinated content rewrites and SOP updates with engineering and operations teams to improve first-contact resolution rates.</li>
+            <li>Architected a 4-domain Versatility Assessment framework across 150+ agents, translated competency gap analysis into structured cross-training programs, role-levelling criteria, and targeted skill development priorities for Q1 2026.</li>
+            <li>Strengthened Voice of Customer intelligence by analysing CSAT verbatim feedback and contact categorisation data across residential energy products, surfacing failure patterns and reporting findings to senior leadership.</li>
+            <li>Synthesised training effectiveness data, attrition patterns, and cohort performance into executive recommendations on training redesign, hiring, and staffing — presenting directly to senior leadership.</li>
+          </ul>
+          <div class="exp-stats">
+            <div class="exp-stat"><strong>20%</strong> Faster agent ramp</div>
+            <div class="exp-stat"><strong>25%</strong> QA variance cut</div>
+            <div class="exp-stat"><strong>200+</strong> Agent org</div>
+            <div class="exp-stat"><strong>5</strong> Product channels</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVISUN -->
+      <div class="exp-card">
+        <div class="exp-meta">
+          <span class="exp-company-badge badge-navisun">Navisun LLC</span>
+          <div class="exp-role">Technical Program Manager Intern</div>
+          <div class="exp-date">Jun 2025 – Sep 2025 · Hingham, MA<br>Asset Management Division</div>
+        </div>
+        <div class="exp-content">
+          <p class="exp-headline">End-to-end program ownership across a ~150MW distributed energy resource (DER) portfolio — from repowering feasibility to construction coordination and anomaly management infrastructure.</p>
+          <ul class="exp-bullets">
+            <li>Owned the repowering feasibility program for two solar assets (Rehoboth, OSG) from scoping through executive presentation — coordinated cross-functional dependencies across 6 departments including Engineering, Finance, Procurement, Construction, Asset Management, and Business Development.</li>
+            <li>Architected project tracking infrastructure in MS Project for the asset management team — standardised milestone tracking, reporting cadences, and dependency visibility across the portfolio. Fully adopted by the team post-internship.</li>
+            <li>Leveraged GPM Horizon analytics across the ~150MW portfolio — identified underperformance events including inverter failures, clipping, and degradation patterns, built anomaly escalation workflows, and translated findings into structured reports informing asset decisions.</li>
+            <li>Coordinated pre-COD construction workflows in Procore — tracked RFIs, submittals, and construction milestones from NTP through energisation, managing dependencies across engineering and construction teams.</li>
+            <li>Monitored subscriber enrolment health and billing credits across municipal customer accounts via Perch Energy and Ampion — surfaced anomalies through structured reporting, enabling proactive resolution before customer-facing disruption.</li>
+          </ul>
+          <div class="exp-stats">
+            <div class="exp-stat"><strong>~150MW</strong> DER portfolio</div>
+            <div class="exp-stat"><strong>6</strong> Departments coordinated</div>
+            <div class="exp-stat"><strong>2</strong> Assets: feasibility to exec deck</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BADHWAR -->
+      <div class="exp-card">
+        <div class="exp-meta">
+          <span class="exp-company-badge badge-badhwar">Badhwar Iron Store</span>
+          <div class="exp-role">Project Coordinator</div>
+          <div class="exp-date">Sep 2022 – Jul 2024 · Punjab, India</div>
+        </div>
+        <div class="exp-content">
+          <p class="exp-headline">Led full project lifecycle across ERP implementation, customer data migration, supply chain operations, and warehouse expansion — the role where I learned to operate without a playbook.</p>
+          <ul class="exp-bullets">
+            <li>Owned end-to-end ERP system implementation including full staff training and change management — designed training materials, led cross-functional onboarding, and drove adoption across teams with no prior system experience.</li>
+            <li>Directed customer data migration into SAP — managed data cleaning, mapping, validation, and system integration to improve CRM accuracy and operational efficiency.</li>
+            <li>Drove risk management across supply chain operations — prioritised mitigation actions and reduced budget discrepancies by $18,000 through structured SWOT analysis and risk tracking.</li>
+            <li>Implemented MRP system and trained staff on new materials planning workflows — reduced lead times by 18% and improved inventory accuracy across operations.</li>
+            <li>Optimised logistics, inventory, and transportation across supply chain — fulfilled 300+ orders with zero discrepancies and negotiated subcontractor contracts to improve vendor coordination.</li>
+          </ul>
+          <div class="exp-stats">
+            <div class="exp-stat"><strong>$18K</strong> Budget discrepancy reduction</div>
+            <div class="exp-stat"><strong>18%</strong> Lead time improvement</div>
+            <div class="exp-stat"><strong>300+</strong> Orders, zero discrepancies</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARQUEE -->
+      <div class="exp-card">
+        <div class="exp-meta">
+          <span class="exp-company-badge badge-marquee">Marquee Equity</span>
+          <div class="exp-role">Strategy & Pitch Consultant</div>
+          <div class="exp-date">May 2021 – Dec 2021 · New Delhi, India</div>
+        </div>
+        <div class="exp-content">
+          <p class="exp-headline">Built investor outreach infrastructure and strategic pitch materials for early-stage startups — an early lesson in translating ambiguous goals into structured, data-backed narratives.</p>
+          <ul class="exp-bullets">
+            <li>Researched and documented 60+ investor profiles, driving a 13% increase in outreach engagement and a 20% conversion rate through targeted email campaigns and CRM tools.</li>
+            <li>Developed pitch decks and strategic plans by leveraging market research and data analysis to strengthen startup narratives.</li>
+            <li>Facilitated investor meetings by highlighting startup goals and investment potential — contributed to a 30% increase in secured funding across the portfolio.</li>
+          </ul>
+          <div class="exp-stats">
+            <div class="exp-stat"><strong>60+</strong> Investor profiles</div>
+            <div class="exp-stat"><strong>30%</strong> Increase in secured funding</div>
+            <div class="exp-stat"><strong>20%</strong> Conversion rate</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS & LEADERSHIP -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects &amp; Leadership</p>
+    <h2 class="section-title">Beyond the day job</h2>
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <div class="proj-card-top">
+          <h3 class="proj-title">Portfolio Health Dashboard · Nucleus RadioPharma</h3>
+          <span class="proj-date">Jan – May 2026</span>
+        </div>
+        <p class="proj-body">Sponsored PM capstone. Designed and delivered a portfolio-level executive dashboard in Monday.com — R/Y/G health framework, milestone tracking, planned vs actual performance, and real-time risk visibility. Translated complex program health metrics into accessible dashboards and trained leadership on adoption of new escalation triggers and milestone workflows. Built comprehensive documentation and user guides for independent use post-handover.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Monday.com</span>
+          <span class="proj-tag">Executive Reporting</span>
+          <span class="proj-tag">Stakeholder Training</span>
+          <span class="proj-tag">Portfolio Management</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-card-top">
+          <h3 class="proj-title">Director of Events · PMI Mass Bay × NUPM</h3>
+          <span class="proj-date">Jun 2025 – Jan 2026</span>
+        </div>
+        <p class="proj-body">Led strategy and execution of professional development events for the PMI Mass Bay × Northeastern University Project Management Club — managing full event lifecycle from ideation to on-site delivery. Coordinated industry partnerships and speaker panels, bridging connections between students and project management professionals across the Boston PM community.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Event Strategy</span>
+          <span class="proj-tag">Partnership Management</span>
+          <span class="proj-tag">Community Building</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-card-top">
+          <h3 class="proj-title">Warehouse &amp; Sales Center Expansion · Badhwar Ironworks</h3>
+          <span class="proj-date">Jan – Apr 2024</span>
+        </div>
+        <p class="proj-body">Project Coordinator for a full warehouse and display office development. Utilised MS Project for scheduling, coordinated cross-functional teams, and managed Gantt charts to achieve 95% schedule adherence. Applied Kaizen, Kanban, and 5S methodologies throughout. Maintained a zero-incident safety record across the build.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">MS Project</span>
+          <span class="proj-tag">Kaizen / 5S</span>
+          <span class="proj-tag">Kanban</span>
+          <span class="proj-tag">Safety Compliance</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-card-top">
+          <h3 class="proj-title">Improving Admission Experience · Punjabi University</h3>
+          <span class="proj-date">Nov 2022 – Jan 2023</span>
+        </div>
+        <p class="proj-body">Led a team of 20 students through a structured diagnostic and intervention initiative. Analysed 200+ student feedback surveys to identify process failures and root causes, developed targeted recommendations, and presented findings to university administration. Solutions implemented improved student satisfaction scores by 18%.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Process Analysis</span>
+          <span class="proj-tag">Team Leadership</span>
+          <span class="proj-tag">Stakeholder Presentation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">What I work with</h2>
+    <div class="skills-grid">
+      <div>
+        <p class="skill-group-title">Program &amp; Project Management</p>
+        <ul class="skill-list">
+          <li>Program Scoping &amp; Delivery</li>
+          <li>Cross-functional Stakeholder Management</li>
+          <li>Risk &amp; Dependency Management</li>
+          <li>OKR / KPI Framework Design</li>
+          <li>Scope &amp; Change Management</li>
+          <li>Agile · Lean Six Sigma · Kanban</li>
+          <li>Resource &amp; Cost Planning</li>
+        </ul>
+      </div>
+      <div>
+        <p class="skill-group-title">Business Analysis</p>
+        <ul class="skill-list">
+          <li>Requirements Analysis &amp; Documentation</li>
+          <li>Process Mapping &amp; Improvement</li>
+          <li>Root Cause Diagnosis</li>
+          <li>Data Analysis &amp; KPI Tracking</li>
+          <li>Voice of Customer (VoC) Programs</li>
+          <li>SOP Development &amp; Workflow Documentation</li>
+          <li>Executive Reporting &amp; Synthesis</li>
+        </ul>
+      </div>
+      <div>
+        <p class="skill-group-title">Tools &amp; Platforms</p>
+        <ul class="skill-list">
+          <li>MS Project · Monday.com · Asana · Jira</li>
+          <li>Tableau · Power BI · Advanced Excel</li>
+          <li>Procore · SAP · Salesforce CRM</li>
+          <li>Smartsheet · Trello · SharePoint</li>
+          <li>GPM Horizon · Perch Energy · Ampion</li>
+          <li>Slack · Zoom</li>
+        </ul>
+      </div>
+      <div>
+        <p class="skill-group-title">Domain Knowledge</p>
+        <ul class="skill-list">
+          <li>Residential Energy &amp; Storage Systems</li>
+          <li>Distributed Energy Resources (DER)</li>
+          <li>Solar Asset Management</li>
+          <li>Customer Support Operations</li>
+          <li>Training Program Design &amp; Delivery</li>
+          <li>Supply Chain &amp; Logistics</li>
+          <li>ERP Implementation &amp; Change Management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Academic foundation</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div>
+          <p class="edu-period">Sep 2024 – Jul 2026</p>
+        </div>
+        <div>
+          <p class="edu-degree">Master of Science in Project Management</p>
+          <p class="edu-school">Northeastern University · Boston, MA</p>
+          <p class="edu-detail">Concentration in Business Analysis. Coursework spanning Agile Project Management, Business Analysis, Lean Product Development, Scope &amp; Risk Management, Scheduling &amp; Cost Planning, Stakeholder Management, Resource Planning, and Requirement Analysis.</p>
+          <span class="edu-gpa">GPA 4.0 / 4.0</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <p class="edu-period">Aug 2020 – Jul 2023</p>
+        </div>
+        <div>
+          <p class="edu-degree">Bachelor of Arts in Economics (Honours)</p>
+          <p class="edu-school">Punjabi University · Punjab, India</p>
+          <p class="edu-detail">Economics Honours with strong analytical and quantitative foundations underpinning current work in data-driven program management and business analysis.</p>
+          <span class="edu-gpa">GPA 3.93 / 4.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="contact-heading">Let's build something<br><em>worth building.</em></h2>
+    <p class="contact-sub">Open to full-time TPM, PM, Business Analysis, and Operations roles starting July 2026.</p>
+    <div class="contact-links">
+      <a href="mailto:gurleenkaur.f@northeastern.edu" class="btn btn-dark">gurleenkaur.f@northeastern.edu</a>
+      <a href="https://www.linkedin.com/in/gurleenkaur-lead/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Gurleen Kaur</span>
+  <span>MS Project Management · Business Analysis · Northeastern University</span>
+</footer>
+
+</body>
+</html>
